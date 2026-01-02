@@ -1,25 +1,33 @@
-# Python #
-###########
+# Python (通用)
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*build/
-*dist/
-*.egg-info/
-
-# Virtualenv #
-##############
-.env
-.venv
+.Python
 env/
 venv/
+.env
+.venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
 
-# Log files #
-#############
-*.log
+# Python (uv 特有)
 
-# IDEs #
-########
-.vscode/
+# Go (Golang)
+# 忽略编译后的二进制文件
+# 因为你的源码目录叫 cx-arot，编译出来的文件在 Linux 下通常也叫 cx-arot
+# 我们指定忽略 cx-arot 目录下的同名二进制文件，但保留目录本身
+cx-arot/cx-arot
+cx-arot/cx-arot.exe
+
+# 忽略测试生成的二进制文件
+*.test
+*.out
+
+# 忽略 IDE 产生的用户配置 (可选)
 .idea/
+.vscode/
+*.swp
+*.DS_Store
